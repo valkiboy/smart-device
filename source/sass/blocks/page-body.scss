@@ -1,0 +1,16 @@
+.page-body {
+  font-family: $ff-roboto-condensed;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $dark-blue;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  position: relative;
+  background-color: $ghostly-white;
+  // background-color: $blue;
+}
