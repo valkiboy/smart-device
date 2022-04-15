@@ -1,7 +1,3 @@
-.main-block {
-  margin-top: -10px;
-}
-
 .main-block__wrapper {
   @media (min-width: $vp-1920) {
     width: 1920px;
@@ -15,7 +11,7 @@
   line-height: 94px;
   color: $grey-white;
   text-transform: uppercase;
-  padding-top: 314px;
+  padding-top: 304px;
   padding-left: 126px;
   letter-spacing: 0.07em;
   margin: 0 0 22px 0;
@@ -23,7 +19,7 @@
   @media (max-width: $vp-1023) {
     font-size: 64px;
     line-height: 75px;
-    padding-top: 89px;
+    padding-top: 79px;
     padding-left: 0;
     margin-bottom: 1px;
   }
@@ -31,7 +27,7 @@
   @media (max-width: $vp-767) {
     font-size: 36px;
     line-height: 42px;
-    padding-top: 91px;
+    padding-top: 81px;
     padding-left: 0;
     margin-bottom: 7px;
     width: 100%;
@@ -55,7 +51,6 @@
   }
 
   @media (max-width: $vp-767) {
-    padding-left: 0;
     padding-top: 0;
     width: 100%;
     margin-bottom: 44px;
