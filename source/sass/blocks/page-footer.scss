@@ -1,0 +1,128 @@
+.page-footer {
+  background-color: $dark-blue;
+  min-height: 280px;
+
+  @media (max-width: $vp-1023) {
+    min-height: 465px;
+  }
+
+  @media (max-width: $vp-767) {
+    min-height: 475px;
+    overflow: hidden;
+  }
+}
+
+.page-footer ul {
+  list-style: none;
+}
+
+.page-footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  @media (min-width: $vp-1920) {
+    width: 1920px;
+    margin: 0 auto;
+    justify-content: start;
+  }
+
+  @media (max-width: $vp-1023) {
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: $vp-767) {
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 767px;
+      background: $ghostly-white;
+      opacity: 0.7;
+      bottom: -10px;
+      left: -25px;
+    }
+  }
+}
+
+.page-footer__logo-wrapper {
+  padding-top: 51px;
+  width: 250px;
+
+  @media (min-width: $vp-1920) {
+    margin-right: 125px;
+  }
+
+  @media (min-width: $vp-1024) {
+    margin-right: 20px;
+  }
+
+  @media (max-width: $vp-1023) {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-top: 15px;
+    padding-left: 1px;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 33px;
+  }
+}
+
+.page-footer__logo {
+  margin-bottom: 17px;
+
+  @media (max-width: $vp-767) {
+    margin-bottom: 5px;
+  }
+}
+
+.page-footer__logo-inner a {
+  display: flex;
+  width: 220px;
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+    justify-content: start;
+    padding-left: 24px;
+  }
+}
+
+.page-footer__logo-wrapper h3 {
+  color: $grey-white;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 15px;
+
+  @media (max-width: $vp-767) {
+    // display: none;
+  }
+}
+
+.page-footer__logo-wrapper p {
+  color: $white;
+  font-family: $ff-roboto;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 70%;
+  margin: 0;
+  padding-top: 1px;
+  padding-left: 15px;
+
+  @media (max-width: $vp-767) {
+    // display: none;
+  }
+}

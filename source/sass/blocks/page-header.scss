@@ -165,8 +165,6 @@
 
   @media (max-width: $vp-1023) {
     padding-left: 20px;
-    // width: 20px;
-    // height: 20px;
   }
 }
 
@@ -174,9 +172,13 @@
   position: absolute;
   top: 0;
   left: 0;
+
+  @media (max-width: $vp-767) {
+    width: 21px;
+  }
 }
 
-.page-header__item {
+.page-header__list li {
   margin-bottom: 15px;
 
   @media (min-width: $vp-1920) {
@@ -198,7 +200,7 @@
 
   @media (max-width: $vp-767) {
     margin-right: 21px;
-    margin-left: 18px;
+    margin-left: 19px;
   }
 }
 
