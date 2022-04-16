@@ -1,0 +1,115 @@
+.advantages__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  padding-left: 0;
+
+  @media (max-width: $vp-1023) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-top: 50px;
+  }
+}
+
+.advantages__list li {
+  width: 45%;
+  margin-bottom: 30px;
+  padding-left: 41px;
+  padding-top: 40px;
+  padding-right: 48px;
+  min-height: 300px;
+  border: 1px solid $b-grey;
+  border-left: 5px solid $blue;
+
+  &:hover {
+    background-color: $blue;
+    border-color: $blue;
+  }
+
+  @media (min-width: $vp-1920) {
+    width: 595px;
+  }
+
+  @media (max-width: $vp-1023) {
+    width: 48%;
+    min-height: 360px;
+    padding-right: 40px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+    min-height: 340px;
+    padding-right: 30px;
+    padding-left: 25px;
+    padding-top: 30px;
+  }
+}
+
+.advantages__list li:nth-child(n+3) {
+  @media (max-width: $vp-767) {
+    min-height: 325px;
+  }
+}
+
+
+.advantages__item:hover h3 {
+  color: $grey-white;
+}
+
+.advantages__item:hover svg {
+  fill: $grey-white;
+}
+
+.advantages__item:hover p {
+  color: $grey-white;
+}
+
+
+.advantages__list svg {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 15px;
+  fill: $blue;
+
+  @media (max-width: $vp-1023) {
+    margin-bottom: 9px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.advantages__list h3 {
+  color: $blue;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 400;
+  margin: 0 0 13px 0;
+
+  @media (max-width: $vp-1023) {
+    margin-bottom: 7px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-bottom: 7px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.advantages__list p {
+  color: $dark-blue;
+  margin: 0;
+  padding-bottom: 29px;
+
+  @media (max-width: $vp-767) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

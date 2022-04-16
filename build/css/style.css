@@ -521,10 +521,6 @@ p {
   background-color: #f8fdff;
 }
 
-.advantages__image {
-  fill: #00b2ff;
-}
-
 .page-header {
   min-height: 880px;
   background-color: #335a7b;
@@ -859,6 +855,69 @@ p {
   margin-bottom: 8px;
 }
 
+.advantages__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  padding-left: 0;
+}
+
+.advantages__list li {
+  width: 45%;
+  margin-bottom: 30px;
+  padding-left: 41px;
+  padding-top: 40px;
+  padding-right: 48px;
+  min-height: 300px;
+  border: 1px solid #ebebeb;
+  border-left: 5px solid #00b2ff;
+}
+
+.advantages__list li:hover {
+  background-color: #00b2ff;
+  border-color: #00b2ff;
+}
+
+.advantages__item:hover h3 {
+  color: #f2f5f6;
+}
+
+.advantages__item:hover svg {
+  fill: #f2f5f6;
+}
+
+.advantages__item:hover p {
+  color: #f2f5f6;
+}
+
+.advantages__list svg {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 15px;
+  fill: #00b2ff;
+}
+
+.advantages__list h3 {
+  color: #00b2ff;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 400;
+  margin: 0 0 13px 0;
+}
+
+.advantages__list p {
+  color: #041827;
+  margin: 0;
+  padding-bottom: 29px;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -1064,6 +1123,10 @@ p {
   .our-office {
     padding-left: 0;
   }
+
+  .advantages__list li {
+    width: 595px;
+  }
 }
 
 @media (max-width: 1439px) {
@@ -1190,6 +1253,24 @@ p {
 
   .our-office__list {
     padding-left: 15px;
+  }
+
+  .advantages__list {
+    margin-top: 80px;
+  }
+
+  .advantages__list li {
+    width: 48%;
+    min-height: 360px;
+    padding-right: 40px;
+  }
+
+  .advantages__list svg {
+    margin-bottom: 9px;
+  }
+
+  .advantages__list h3 {
+    margin-bottom: 7px;
   }
 }
 
@@ -1484,6 +1565,38 @@ p {
   .our-office__list li:not(:first-child) {
     line-height: 25px;
     margin-bottom: 5px;
+  }
+
+  .advantages__list {
+    margin-top: 50px;
+  }
+
+  .advantages__list li {
+    width: 100%;
+    min-height: 340px;
+    padding-right: 30px;
+    padding-left: 25px;
+    padding-top: 30px;
+  }
+
+  .advantages__list li:nth-child(n+3) {
+    min-height: 325px;
+  }
+
+  .advantages__list svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .advantages__list h3 {
+    margin-bottom: 7px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .advantages__list p {
+    font-size: 14px;
+    line-height: 19px;
   }
 
   .modal__wrapper {
