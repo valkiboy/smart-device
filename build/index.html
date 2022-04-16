@@ -398,29 +398,37 @@
           </ul>
         </section>
       </div>
-      <section class="site-sections">
-        <button class="site-sections__toggle page-footer__toggle" type="button" id="site-sections-toggle"><span class="visually-hidden">Открыть</span></button>
-        <h3>Разделы сайта</h3>
-        <ul class="site-sections__list page-footer__list" id="site-sections">
-          <li class="site-sections__item">О Компаниии</li>
-          <li class="site-sections__item">Продукты</li>
-          <li class="site-sections__item">Производство печатных плат</li>
-          <li class="site-sections__item">Монтаж печатных плат</li>
-          <li class="site-sections__item">Комплектующие</li>
-          <li class="site-sections__item">Доставка</li>
-          <li class="site-sections__item">Контакты</li>
-        </ul>
-      </section>
-      <section class="our-office">
-        <button class="our-office__toggle page-footer__toggle" type="button" id="our-office-toggle"><span class="visually-hidden">Открыть</span></button>
-        <h3>Наш офис</h3>
-        <ul class="our-office__list page-footer__list" id="our-office">
-          <li class="our-office__item">г. Мытищи, Олимпийский проспект, д.10</li>
-          <li class="our-office__item">+7 (495) 589-40-50</li>
-          <li class="our-office__item">+7 (925) 389-58-29</li>
-          <li class="our-office__item">+7 (925) 364-78-13</li>
-        </ul>
-      </section>
+      <div class="accordion">
+        <section class="site-sections">
+          <div class="accordion__item-header">
+            <button class="site-sections__toggle accordion__toggle page-footer__toggle" type="button"><span
+                class="visually-hidden">Открыть</span></button>
+            <h3>Разделы сайта</h3>
+          </div>
+          <ul class="site-sections__list page-footer__list accordion__item-content">
+            <li class="site-sections__item">О Компаниии</li>
+            <li class="site-sections__item">Продукты</li>
+            <li class="site-sections__item">Производство печатных плат</li>
+            <li class="site-sections__item">Монтаж печатных плат</li>
+            <li class="site-sections__item">Комплектующие</li>
+            <li class="site-sections__item">Доставка</li>
+            <li class="site-sections__item">Контакты</li>
+          </ul>
+        </section>
+        <section class="our-office">
+          <div class="accordion__item-header">
+            <button class="our-office__toggle accordion__toggle page-footer__toggle" type="button"><span
+                class="visually-hidden">Открыть</span></button>
+            <h3>Наш офис</h3>
+          </div>
+          <ul class="our-office__list page-footer__list accordion__item-content">
+            <li class="our-office__item">г. Мытищи, Олимпийский проспект, д.10</li>
+            <li class="our-office__item">+7 (495) 589-40-50</li>
+            <li class="our-office__item">+7 (925) 389-58-29</li>
+            <li class="our-office__item">+7 (925) 364-78-13</li>
+          </ul>
+        </section>
+      </div>
     </div>
   </footer>
 
