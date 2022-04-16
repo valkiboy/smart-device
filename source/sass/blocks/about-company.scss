@@ -1,0 +1,129 @@
+.about-company__wrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: url("../img/svg/company.svg");
+    width: 150px;
+    height: 320px;
+
+    @media (min-width: $vp-1024) {
+      top: 74px;
+      left: 56px;
+    }
+
+    @media (min-width: $vp-1440) {
+      left: 146px;
+    }
+
+    @media (min-width: $vp-1920) {
+      left: 350px;
+    }
+
+    @media (max-width: $vp-1023) {
+      top: 34px;
+      left: 46px;
+    }
+
+    @media (max-width: $vp-767) {
+      display: none;
+    }
+  }
+
+  @media (min-width: $vp-1920) {
+    width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.about-company h2 {
+  padding-top: 74px;
+  padding-left: 250px;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 51px;
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  @media (max-width: $vp-1023) {
+    padding-left: 175px;
+    padding-top: 29px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-left: 0;
+    padding-top: 1px;
+    margin-bottom: 11px;
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+.about-company p {
+  font-family: $ff-pt-mono;
+  margin-top: 0;
+  padding-left: 250px;
+  margin-bottom: 20px;
+
+  @media (max-width: $vp-1023) {
+    padding-left: 175px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-left: 0;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 19px;
+  }
+}
+
+.about-company__hide {
+  display: none;
+}
+
+.about-company button {
+  width: 180px;
+  min-height: 45px;
+  border: 1px solid $blue;
+  border-radius: 3px;
+  background-color: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: $blue;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-left: 250px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bg-hover;
+  }
+
+  @media (max-width: $vp-1023) {
+    margin-top: -5px;
+    margin-bottom: 60px;
+    margin-left: 175px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 160px;
+    min-height: 35px;
+    margin-top: -5px;
+    margin-bottom: 60px;
+    margin-left: 0;
+  }
+}
+
+.about-company span {
+  display: block;
+
+  @media (max-width: $vp-767) {
+    display: none;
+  }
+}
