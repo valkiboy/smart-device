@@ -47,6 +47,7 @@
   padding-top: 57px;
   margin-bottom: 22px;
   margin-top: 0;
+  width: 150px;
 
   @media (max-width: $vp-1023) {
     padding-top: 3px;
@@ -61,7 +62,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, min-content);
-  grid-auto-flow: column;
+  grid-auto-flow: row;
 
   @media (max-width: $vp-1023) {
     display: block;
@@ -76,5 +77,15 @@
 .site-sections__list li {
   margin-bottom: 8px;
   margin-right: 44px;
-  width: 205px;
+
+  @media (min-width: $vp-1920) {
+    margin-right: 20px;
+  }
+  @media (max-width: $vp-1440) {
+    width: 180px;
+  }
+
+  @media (max-width: $vp-1023) {
+    width: 205px;
+  }
 }

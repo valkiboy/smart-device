@@ -94,7 +94,7 @@ const changes = (screen) => {
 };
 
 if (matchMedia) {
-  const screen = window.matchMedia('(max-width:768px)');
+  const screen = window.matchMedia('(max-width:767px)');
   screen.addEventListener('change', changes);
   changes(screen);
 }
