@@ -8,11 +8,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-  // @media (max-width: $vp-1023) {
-  //   margin-left: auto;
-  //   margin-right: auto;
-  // }
 }
 
 .goods-services h2 {
@@ -108,6 +103,7 @@
   display: block;
   margin-bottom: 60px;
   fill: $blue;
+  background-color: $bg-main;
 
   &:hover {
     color: $c-hover;

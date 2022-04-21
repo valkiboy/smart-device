@@ -1115,6 +1115,7 @@ textarea:-ms-input-placeholder {
   display: block;
   margin-bottom: 60px;
   fill: #00b2ff;
+  background-color: #335a7b;
 }
 
 .goods-services__list a:hover {
