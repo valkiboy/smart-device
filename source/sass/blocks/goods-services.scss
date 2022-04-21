@@ -8,6 +8,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  // @media (max-width: $vp-1023) {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 }
 
 .goods-services h2 {
@@ -52,6 +57,7 @@
   @media (max-width: $vp-1023) {
     justify-content: flex-start;
     flex-direction: column;
+    width: 100%;
     padding-bottom: 45px;
   }
 
@@ -64,6 +70,10 @@
   @media (min-width: $vp-1024) {
     margin-right: 0;
   }
+}
+
+.goods-services__list {
+  margin-bottom: 0;
 }
 
 .goods-services__list li {
@@ -82,6 +92,7 @@
     margin-bottom: 30px;
     margin-right: 0;
     width: 670px;
+    box-sizing: border-box;
     min-height: 250px;
   }
 
@@ -155,6 +166,7 @@
 }
 
 .goods-services__inner {
+  // width: 670px;
   @media (max-width: $vp-767) {
     margin-left: auto;
     margin-right: auto;

@@ -1,0 +1,387 @@
+.feedback-form {
+  min-height: 840px;
+  background-color: $bg-blue;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background-image: linear-gradient(139.14deg, $bg-color 635px, $bg-opacolor 635px);
+
+
+    @media (min-width: $vp-1920) {
+      left: 0;
+      width: 51%;
+    }
+
+    @media (min-width: $vp-1440) {
+      left: -288px;
+      width: 69%;
+    }
+
+    @media (min-width: $vp-1280) {
+      left: -359px;
+      width: 77%;
+    }
+
+    @media (min-width: $vp-1024) {
+      left: -609px;
+      width: 97%;
+    }
+
+    @media (max-width: $vp-1023) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $vp-1023) {
+    min-height: 580px;
+  }
+
+  @media (max-width: $vp-767) {
+    min-height: 750px;
+  }
+}
+
+.feedback-form__wrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: url("../img/svg/paper-airplane.svg");
+    width: 510px;
+    height: 285px;
+    top: 246px;
+    z-index: 2;
+
+    @media (min-width: $vp-1920) {
+      left: 350px;
+    }
+
+    @media (min-width: $vp-1440) {
+      left: 50px;
+    }
+
+    @media (min-width: $vp-1280) {
+      left: 19px;
+    }
+
+    @media (min-width: $vp-1024) {
+      left: -139px;
+    }
+
+    @media (max-width: $vp-1023) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $vp-767) {
+    min-height: 750px;
+    min-width: 320px;
+  }
+}
+
+.feedback-form__title {
+  padding-top: 165px;
+
+  @media (min-width: $vp-1920) {
+
+    padding-left: 625px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1220px;
+  }
+
+  @media (min-width: $vp-1520) {
+    width: 1160px;
+    padding-left: 570px;
+  }
+
+  @media (min-width: $vp-1280) {
+    width: 1005px;
+    padding-left: 420px;
+    margin-left: auto;
+  }
+
+  @media (min-width: $vp-1024) {
+    margin-left: auto;
+    margin-bottom: 7px;
+    width: 580px;
+  }
+
+  @media (max-width: $vp-1023) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 670px;
+    padding-top: 45px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 47px;
+  }
+}
+
+.feedback-form h2 {
+  margin: 0;
+  color: $white;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 51px;
+  width: 100%;
+  margin-bottom: 12px;
+
+  @media (max-width: $vp-1023) {
+    margin-bottom: 7px;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 30px;
+    line-height: 42px;
+    text-align: left;
+  }
+}
+
+.feedback-form p {
+  margin: 0;
+  color: $white;
+  padding-left: 5px;
+  margin-bottom: 35px;
+  width: 100%;
+
+  @media (max-width: $vp-1023) {
+    // margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 34px;
+  }
+}
+
+.feedback-form input {
+  color: $white;
+  background-color: $bg-input;
+  border: none;
+  border-radius: 3px;
+  font-family: $ff-pt-mono;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  position: relative;
+  width: 275px;
+  padding: 13px 15px 15px;
+  margin: 0 0 20px;
+
+  @media (max-width: $vp-1023) {
+    width: 320px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+  }
+}
+
+.feedback-form__form div:first-child {
+  margin-right: 29px;
+
+  @media (max-width: $vp-767) {
+    margin-right: 0;
+  }
+}
+
+.feedback-form textarea {
+  color: $white;
+  background-color: $bg-input;
+  border: none;
+  font-family: $ff-pt-mono;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 3px;
+  width: 580px;
+  min-height: 155px;
+  padding: 23px 15px;
+  margin: 0 0 22px;
+
+  @media (max-width: $vp-1023) {
+    width: 670px;
+    padding-top: 30px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+    padding-top: 23px;
+    min-height: 180px;
+    margin-bottom: 18px;
+  }
+}
+
+.feedback-form__inner {
+  @media (min-width: $vp-1920) {
+    width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 630px;
+  }
+
+  @media (min-width: $vp-1520) {
+    width: 1160px;
+    padding-left: 570px;
+  }
+
+  @media (min-width: $vp-1280) {
+    width: 1005px;
+    padding-left: 420px;
+    margin-left: auto;
+  }
+
+  @media (min-width: $vp-1024) {
+    margin-left: auto;
+    margin-bottom: 7px;
+    width: 580px;
+  }
+
+  @media (max-width: $vp-1023) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 670px;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.feedback-form__form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (max-width: $vp-1920) {
+    margin-left: auto;
+  }
+
+  @media (max-width: $vp-767) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.feedback-form__button {
+  width: 265px;
+  min-height: 45px;
+  background-color: $black-blue;
+  border: none;
+  border-radius: 3px;
+  color: $white;
+  text-transform: uppercase;
+  padding-top: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  margin-top: 6px;
+  margin-bottom: 7px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bg-hover;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+    margin-bottom: -12px;
+  }
+}
+
+.feedback-form__form .feedback-form__checkbox {
+  width: 0;
+}
+
+.feedback-form__checkbox + label {
+  padding-left: 27px;
+  position: relative;
+  font-family: $ff-pt-mono;
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  width: 222px;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-bottom: 5px;
+  margin-left: 45px;
+  margin-top: 21px;
+  cursor: pointer;
+
+  &:hover {
+    color: $bg-hover;
+  }
+
+  @media (max-width: $vp-1023) {
+    margin-top: 16px;
+    margin-left: 80px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-top: 0;
+    margin-left: 3px;
+    width: 100%;
+  }
+}
+
+.feedback-form__checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 7px;
+  background-image: url("../img/svg/checkbox-on.svg");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+
+  @media (max-width: $vp-767) {
+    left: 1px;
+    top: 6px;
+    background-image: url("../img/svg/checkbox-on.svg");
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.feedback-form__checkbox + label::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 7px;
+  background-image: url("../img/svg/checkbox-off.svg");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  @media (max-width: $vp-767) {
+    left: 1px;
+    top: 6px;
+    background-image: url("../img/svg/checkbox-off.svg");
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.feedback-form__checkbox:focus + label::after {
+  outline: 1px dashed #ffffff;
+  outline-offset: 2px;
+}

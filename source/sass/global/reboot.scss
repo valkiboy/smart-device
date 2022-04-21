@@ -34,3 +34,43 @@ textarea {
 p {
   font-family: $ff-pt-mono;
 }
+
+input::placeholder {
+  color: $white;
+}
+
+input::-webkit-input-placeholder {
+  color: $white;
+}
+
+input::-moz-placeholder {
+  color: $white;
+}
+
+input:-moz-placeholder {
+  color: $white;
+}
+
+input:-ms-input-placeholder {
+  color: $white;
+}
+
+textarea::placeholder {
+  color: $white;
+}
+
+textarea::-webkit-input-placeholder {
+  color: $white;
+}
+
+textarea::-moz-placeholder {
+  color: $white;
+}
+
+textarea:-moz-placeholder {
+  color: $white;
+}
+
+textarea:-ms-input-placeholder {
+  color: $white;
+}
