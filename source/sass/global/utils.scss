@@ -51,22 +51,9 @@
   }
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  padding-top: 60px;
-  overflow: auto;
-  background-color: #002b6680;
-  display: none;
-}
-
-.overlay--open {
-  display: block;
+.modal-open {
+  height: 100vh;
+  overflow: hidden;
 }
 
 .close {
@@ -75,42 +62,15 @@
   }
 }
 
-.toggle--close {
-  @media (max-width: $vp-767) {
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      left: 1px;
-      width: 15px;
-      height: 1px;
-      background-color: $grey;
-    }
-
-    &::after {
-      transform: rotate(90deg);
-    }
-  }
-}
-
-.toggle--open {
-  @media (max-width: $vp-767) {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 9px;
-      left: 1px;
-      width: 15px;
-      height: 1px;
-      background-color: $grey;
-      box-shadow: none;
-    }
-  }
-}
-
 .no-js {
   @media (max-width: $vp-767) {
     padding-bottom: 45px;
   }
+}
+
+.pop-up {
+  position: absolute;
+  top: 146px;
+  left: -16px;
+  right: 0;
 }
