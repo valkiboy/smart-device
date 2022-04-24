@@ -8,17 +8,20 @@ const aboutCompanySpan = document.querySelector('.about-company span');
 const pageBody = document.querySelector('.page-body');
 const overlay = document.querySelector('.overlay');
 const modal = document.querySelector('.modal');
+
 const modalToggle = document.querySelector('.modal__toggle');
 const feedbackform = document.querySelector('.feedback-form__form');
 const modalform = document.querySelector('.modal__form');
 const mainNavButton = document.querySelector('.main-nav__button');
+const modalButton = document.querySelector('.button--submit-modal');
+const modalСheckbox = document.querySelector('.modal__checkbox');
 const modalName = document.getElementById('modal-name');
 const modalPhone = document.getElementById('modal-telephone');
 const myName = document.getElementById('name');
 const myPhone = document.getElementById('telephone');
 
-const rephone = /([0-9]+)$/;
-const rename = /^[a-zA-Zа-яА-Я']+[a-zA-Zа-яА-Я']?$/u;
+const rephone = /^(?:\+|7)[\d\(\) ]{15}\d$/g;
+const rename = /^[a-zA-Zа-яА-Я'\s]+[a-zA-Zа-яА-Я'\s]{0,}$/u;
 
 const getAddClose = (item) => {
   item.classList.add('close');
@@ -127,7 +130,6 @@ if (typeof (aboutCompanyButton) !== 'undefined' && aboutCompanyButton !== null) 
 }
 
 // ----- Сохранения данных в localStorage -----
-// --------------------------------------------
 
 function persist(event) {
   let thisArg = event.path[0];
@@ -167,6 +169,44 @@ if (typeof (mainNavButton && overlay && modal && pageBody && modalToggle && moda
     evt.preventDefault();
     getCloseModal();
   });
+
+  // проверяем что нажата кнопка эскейп
+
+  const isEscapeKey = (evt) => {
+    if (evt.key === 'Escape') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  // Закрываем оверлей
+
+  const getCloseOverlay = () => {
+    overlay.classList.remove('overlay--open');
+  };
+
+  // закрываем попап и оверлей кнопкой эскейп
+
+  const onSuccessEscKeydown = (evt) => {
+    if (isEscapeKey(evt)) {
+      evt.preventDefault();
+      getCloseModal();
+      getCloseOverlay();
+    }
+  };
+
+  // закрываем попап и оверлей кликом по оверлею
+
+  overlay.addEventListener('click', function (evt) {
+    if (evt.target === overlay) {
+      getCloseModal();
+      getCloseOverlay();
+    }
+  });
+
+  window.addEventListener('keydown', onSuccessEscKeydown);
+
 }
 
 // Валидация Имени
@@ -191,11 +231,9 @@ if (typeof (myName) !== 'undefined' && myName !== null) {
 if (typeof (myPhone) !== 'undefined' && myPhone !== null) {
   const checkPhoneValidity = () => {
     const textPhone = myPhone.value;
-    if (textPhone === '') {
+    if (textPhone.length === 1) {
       myPhone.setCustomValidity('поле обязательное');
     } else if (!rephone.test(textPhone)) {
-      myPhone.setCustomValidity('номер телефона должен содержать только цифры');
-    } else if (textPhone.length !== 17) {
       myPhone.setCustomValidity('введите 10 цифр телефона');
     } else {
       myPhone.setCustomValidity('');
@@ -227,11 +265,9 @@ if (typeof (modalName) !== 'undefined' && modalName !== null) {
 if (typeof (modalPhone) !== 'undefined' && modalPhone !== null) {
   const checkPhoneValidity = () => {
     const textPhone = modalPhone.value;
-    if (textPhone === '') {
+    if (textPhone.length === 1) {
       modalPhone.setCustomValidity('поле обязательное');
     } else if (!rephone.test(textPhone)) {
-      modalPhone.setCustomValidity('номер телефона должен содержать только цифры');
-    } else if (textPhone.length !== 17) {
       modalPhone.setCustomValidity('введите 10 цифр телефона');
     } else {
       modalPhone.setCustomValidity('');
@@ -295,6 +331,7 @@ if (typeof (modalPhone) !== 'undefined' && modalPhone !== null) {
       }
     }
 
+    const regex = /[_\d]/;
     let isDel = false;
     let isBack = false;
     function mask(event) {
@@ -302,30 +339,46 @@ if (typeof (modalPhone) !== 'undefined' && modalPhone !== null) {
       if (event.type === 'keyup') {
         curentPosition = modalPhone.selectionStart;
       }
-      let matrix = '+7 (___) ___ ____';
+      let matrix = '+7 (___) ___ _____';
       let i = 0;
       let def = matrix.replace(/\D/g, '');
       let val = modalPhone.value.replace(/\D/g, '');
-
       if (def.length >= val.length) {
         val = def;
       }
-
-      const numb = /[_\d]/;
-
-      modalPhone.value = matrix.replace(/./g, function (a) {
-
-        if (numb.test(a) && i <= val.length) {
-          return val.charAt(i++);
-        } else if (i < val.length) {
-          return a;
-        } else if (i++ === 6 && val.length === 4 && event.keyCode !== 8 && event.keyCode !== '') {
-          return ')';
-        } else {
-          return '';
+      if (event.type === 'input') {
+        if (modalPhone.value.charAt(0) !== '+') {
+          modalPhone.value = modalPhone.value.replace(/^(.{1})./, '$1+');
         }
-      });
-
+        if (modalPhone.value.charAt(1) !== '7') {
+          modalPhone.value = modalPhone.value.replace(/^(.{2})./, '$17');
+        }
+        if (modalPhone.value.length < 2) {
+          modalPhone.value = matrix.replace(/./g, function (a) {
+            if (regex.test(a) && i <= val.length) {
+              return val.charAt(i++);
+            } else if (i < val.length) {
+              return a;
+            } else if (i++ === 6 && val.length === 4 && event.keyCode !== 8 && event.keyCode !== '') {
+              return ')';
+            } else {
+              return '';
+            }
+          });
+        }
+      } else {
+        modalPhone.value = matrix.replace(/./g, function (a) {
+          if (regex.test(a) && i <= val.length) {
+            return val.charAt(i++);
+          } else if (i < val.length) {
+            return a;
+          } else if (i++ === 6 && val.length === 4 && event.keyCode !== 8 && event.keyCode !== '') {
+            return ')';
+          } else {
+            return '';
+          }
+        });
+      }
       isBack = isDel = false;
       if (event.keyCode === 8) {
         isBack = true;
@@ -340,15 +393,19 @@ if (typeof (modalPhone) !== 'undefined' && modalPhone !== null) {
         if (isDel || isBack) {
           setCursorPosition(curentPosition, modalPhone);
         }
-      } else if (event.type === 'focus') {
+      } else if (event.type !== 'input') {
         setCursorPosition(modalPhone.value.length, modalPhone);
       }
     }
+
     modalPhone.addEventListener('focus', mask, false);
     modalPhone.addEventListener('blur', mask, false);
     modalPhone.addEventListener('keyup', mask, false);
+    modalPhone.addEventListener('input', mask, false);
   });
 }
+
+// Добавление маски и закрывающей скобки телефону формы обратной связи
 
 if (typeof (myPhone) !== 'undefined' && myPhone !== null) {
 
@@ -366,14 +423,16 @@ if (typeof (myPhone) !== 'undefined' && myPhone !== null) {
       }
     }
 
+    const regex = /[_\d]/;
     let isDel = false;
     let isBack = false;
+    // let defPosition = -1;
     function mask(event) {
       let curentPosition = -1;
       if (event.type === 'keyup') {
         curentPosition = myPhone.selectionStart;
       }
-      let matrix = '+7 (___) ___ ____';
+      let matrix = '+7 (___) ___ _____';
       let i = 0;
       let def = matrix.replace(/\D/g, '');
       let val = myPhone.value.replace(/\D/g, '');
@@ -381,22 +440,40 @@ if (typeof (myPhone) !== 'undefined' && myPhone !== null) {
       if (def.length >= val.length) {
         val = def;
       }
-
-      const numb = /[_\d]/;
-
-      myPhone.value = matrix.replace(/./g, function (a) {
-
-        if (numb.test(a) && i <= val.length) {
-          return val.charAt(i++);
-        } else if (i < val.length) {
-          return a;
-        } else if (i++ === 6 && val.length === 4 && event.keyCode !== 8 && event.keyCode !== '') {
-          return ')';
-        } else {
-          return '';
+      if (event.type === 'input') {
+        if (myPhone.value.charAt(0) !== '+') {
+          myPhone.value = myPhone.value.replace(/^(.{1})./, '$1+');
         }
-      });
+        if (myPhone.value.charAt(1) !== '7') {
+          myPhone.value = myPhone.value.replace(/^(.{2})./, '$17');
+        }
+        if (myPhone.value.length < 2) {
+          myPhone.value = matrix.replace(/./g, function (a) {
+            if (regex.test(a) && i <= val.length) {
+              return val.charAt(i++);
+            } else if (i < val.length) {
+              return a;
+            } else if (i++ === 6 && val.length === 4 && event.keyCode !== 8 && event.keyCode !== '') {
+              return ')';
+            } else {
+              return '';
+            }
+          });
+        }
+      } else {
+        myPhone.value = matrix.replace(/./g, function (a) {
 
+          if (regex.test(a) && i <= val.length) {
+            return val.charAt(i++);
+          } else if (i < val.length) {
+            return a;
+          } else if (i++ === 6 && val.length === 4 && event.keyCode !== 8 && event.keyCode !== '') {
+            return ')';
+          } else {
+            return '';
+          }
+        });
+      }
       isBack = isDel = false;
       if (event.keyCode === 8) {
         isBack = true;
@@ -411,12 +488,37 @@ if (typeof (myPhone) !== 'undefined' && myPhone !== null) {
         if (isDel || isBack) {
           setCursorPosition(curentPosition, myPhone);
         }
-      } else if (event.type === 'focus') {
+      } else if (event.type !== 'input') {
         setCursorPosition(myPhone.value.length, myPhone);
       }
     }
+
     myPhone.addEventListener('focus', mask, false);
     myPhone.addEventListener('blur', mask, false);
     myPhone.addEventListener('keyup', mask, false);
+    myPhone.addEventListener('input', mask, false);
+  });
+}
+
+// Зациклил фокус на модалке
+
+if (typeof (modalButton && modalToggle && modalСheckbox) !== 'undefined' && modalButton && modalToggle && modalСheckbox !== null) {
+
+  modalButton.addEventListener('keydown', function (evt) {
+    if (!evt.shiftKey && evt.key === 'Tab') {
+      evt.preventDefault();
+      modalToggle.focus();
+    } else if (evt.shiftKey && evt.key === 'Tab') {
+      evt.preventDefault();
+      modalСheckbox.focus();
+    }
+  });
+
+
+  modalToggle.addEventListener('keydown', function (evt) {
+    if (evt.shiftKey && evt.key === 'Tab') {
+      evt.preventDefault();
+      modalButton.focus();
+    }
   });
 }

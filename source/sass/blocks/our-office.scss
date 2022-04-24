@@ -2,7 +2,7 @@
   color: $white;
 
   @media (min-width: $vp-1920) {
-    padding-left: 13px;
+    padding-left: 0;
   }
 
   @media (min-width: $vp-1024) {
@@ -104,5 +104,14 @@
   @media (max-width: $vp-767) {
     line-height: 25px;
     margin-bottom: 5px;
+  }
+}
+
+.our-office__list a {
+  color: $white;
+  opacity: 70%;
+
+  &:hover {
+    color: $bg-hover;
   }
 }

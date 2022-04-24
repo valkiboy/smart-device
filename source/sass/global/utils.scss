@@ -73,21 +73,37 @@
   top: 146px;
   left: -16px;
   right: 0;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.grid__item-2 {
-  grid-column: 1;
-  grid-row: 2;
+.flex__item-1 {
+  order: 0;
 }
 
-.grid__item-3 {
-  grid-column: 1;
-  grid-row: 3;
+.flex__item-2 {
+  order: 1;
 }
 
-.grid__item-4 {
-  grid-column: 1;
-  grid-row: 4;
+.flex__item-3 {
+  order: 2;
+}
+
+.flex__item-4 {
+  order: 3;
+}
+
+.flex__item-5 {
+  order: 0;
+}
+
+.flex__item-6 {
+  order: 1;
+}
+
+.flex__item-7 {
+  order: 2;
 }
 
 .overlay {

@@ -214,3 +214,8 @@
     }
   }
 }
+
+.modal__checkbox-wrap {
+  display: flex;
+  flex-direction: column-reverse;
+}

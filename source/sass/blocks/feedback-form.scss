@@ -54,10 +54,9 @@
     position: absolute;
     display: block;
     background-image: url("../img/svg/paper-airplane.svg");
-    width: 510px;
-    height: 285px;
     top: 246px;
     z-index: 2;
+    background-size: cover;
 
     @media (min-width: $vp-1920) {
       left: 350px;
@@ -69,10 +68,14 @@
 
     @media (min-width: $vp-1280) {
       left: 19px;
+      width: 510px;
+      height: 285px;
     }
 
     @media (min-width: $vp-1024) {
-      left: -139px;
+      left: 6px;
+      width: 376px;
+      height: 210px;
     }
 
     @media (max-width: $vp-1023) {
@@ -384,4 +387,13 @@
 .feedback-form__checkbox:focus + label::after {
   outline: 1px dashed #ffffff;
   outline-offset: 2px;
+}
+
+.feedback-form__checkbox-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @media (max-width: $vp-767) {
+    flex-direction: column-reverse;
+  }
 }

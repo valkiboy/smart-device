@@ -81,10 +81,21 @@
   }
 }
 
+.page-header__logotype {
+  display: block;
+
+  @media (max-width: $vp-767) {
+    display: none;
+  }
+}
+
 .page-header__logo {
+  display: none;
+
   @media (max-width: $vp-767) {
     width: 35px;
     height: 35px;
+    display: block;
   }
 }
 
@@ -212,6 +223,7 @@
 
 .page-header__item a {
   fill: $blue;
+  width: max-content;
 
   &:hover {
     color: $bg-hover;
@@ -254,11 +266,15 @@
 }
 
 .page-header__item-mail:focus svg {
-  outline: 1px dashed #ffffff;
-  outline-offset: 2px;
+  @media (max-width: $vp-1023) {
+    outline: 1px dashed #ffffff;
+    outline-offset: 2px;
+  }
 }
 
 .page-header__item-phone:focus svg {
-  outline: 1px dashed #ffffff;
-  outline-offset: 2px;
+  @media (max-width: $vp-1023) {
+    outline: 1px dashed #ffffff;
+    outline-offset: 2px;
+  }
 }

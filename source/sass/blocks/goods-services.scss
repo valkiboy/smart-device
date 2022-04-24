@@ -77,15 +77,22 @@
 
   @media (min-width: $vp-1920) {
     margin-right: 85px;
+    width: 350px;
+  }
+
+  @media (min-width: $vp-1440) {
+    width: 21%;
   }
 
   @media (min-width: $vp-1024) {
     margin-right: 30px;
+    width: 26%;
   }
 
   @media (max-width: $vp-1023) {
     margin-bottom: 30px;
-    margin-right: 0;
+    margin-right: auto;
+    margin-left: auto;
     width: 670px;
     box-sizing: border-box;
     min-height: 250px;
@@ -93,7 +100,7 @@
 
   @media (max-width: $vp-767) {
     margin-bottom: 30px;
-    width: 270px;
+    width: 100%;
     min-height: 250px;
   }
 }
@@ -159,14 +166,17 @@
   @media (max-width: $vp-1023) {
     width: 100%;
   }
+
+  @media (max-width: $vp-767) {
+    height: 250px;
+  }
 }
 
 .goods-services__inner {
-  // width: 670px;
   @media (max-width: $vp-767) {
     margin-left: auto;
     margin-right: auto;
-    width: 270px;
+    width: 100%;
   }
 }
 
