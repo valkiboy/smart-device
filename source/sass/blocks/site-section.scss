@@ -2,7 +2,7 @@
   color: $white;
 
   @media (min-width: $vp-1024) {
-    width: 41%;
+    width: 42%;
   }
 
   @media (max-width: $vp-767) {
@@ -59,11 +59,15 @@
   padding-left: 0;
   margin: 0;
   font-family: $ff-pt-mono;
-  display: flex;
-  flex-wrap: wrap;
+
+  @media (min-width: $vp-1024) {
+    display: block;
+    column-count: 2;
+    column-gap: 5%;
+  }
 
   @media (min-width: $vp-1920) {
-    width: 500px;
+    width: 478px;
   }
 
   @media (min-width: $vp-1440) {
@@ -89,6 +93,7 @@
   margin-right: 44px;
   width: 203px;
 
+
   @media (min-width: $vp-1920) {
     margin-right: 47px;
   }
@@ -103,6 +108,7 @@
 }
 
 .site-sections__list a {
+  display: block;
   color: $white;
   opacity: 70%;
 
