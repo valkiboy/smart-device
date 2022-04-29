@@ -919,7 +919,6 @@ textarea:-ms-input-placeholder {
 }
 
 .site-sections__list a {
-  display: block;
   color: #ffffff;
   opacity: 70%;
 }
